@@ -31,5 +31,5 @@ module.exports = (robot) ->
     for component in components
       msg.send "[#{component.status}] #{component.name}"
 
-  robot.repond /cachet components list/i, (msg) ->
+  robot.respond /cachet components list/i, (msg) ->
     getComponents(msg)
