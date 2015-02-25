@@ -1,30 +1,32 @@
 # Description:
-# Get status and control CircleCI from hubot
+#   Get status and control Cachet from hubot
 #
 # Dependencies:
-# None
+#   None
 #
 # Commands:
-# hubot cachet components list - Returns the list of the composants on the cachet status page
+#   hubot cachet components list - Returns the list of the composants on the cachet status page
 #
 # Configuration:
-# HUBOT_CACHET_API_URL
-# HUBOT_CACHET_API_KEY
+#   HUBOT_CACHET_API_URL
+#   HUBOT_CACHET_API_KEY
 #
 # Author:
-# luxifer
+#   luxifer
 
 cachetUrl = process.env.HUBOT_CACHET_API_URL
 cachetApiKey = process.env.HUBOT_CACHET_API_KEY
 
-mkeRequest = (robot, path) ->
-  return robot.http("#{cachetUrl}#{path}")
-    .header('Accept', 'application/json')
-    .header('X-Cachet-Token', cachetApiKey)
-
 module.exports = (robot) ->
+
+  makeRequest = (robot, path) ->
+    return robot.http("#{cachetUrl}#{path}")
+      .header('Accept', 'application/json')
+      .header('X-Cachet-Token', cachetApiKey)
+
   robot.respond /cachet components list/i, (msg) ->
-    mkeRequest(msg, '/api/components')
+    req = makeRequest(msg, '/api/components')
+    req
       .get() (err, res, body) ->
         if err
           msg.send "Problem accessing the Cachet API"

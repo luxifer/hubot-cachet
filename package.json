@@ -4,7 +4,7 @@
   "description": "Hubot plugin to interact with cachet status page",
   "main": "index.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "script/test"
   },
   "keywords": [
     "hubot",
@@ -13,9 +13,15 @@
   ],
   "author": "Florent Viel <florent.viel69@gmail.com>",
   "license": "MIT",
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/luxifer/hubot-cachet.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luxifer/hubot-cachet.git"
+  },
+  "devDependencies": {
+    "chai": "^2.1.0",
+    "coffee-script": "^1.9.1",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2",
+    "sinon-chai": "^2.7.0"
   }
 }
