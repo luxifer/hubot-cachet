@@ -1,6 +1,6 @@
 {
   "name": "hubot-cachet",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Hubot plugin to interact with cachet status page",
   "main": "index.coffee",
   "scripts": {
@@ -23,5 +23,8 @@
     "mocha": "^2.1.0",
     "sinon": "^1.12.2",
     "sinon-chai": "^2.7.0"
+  },
+  "dependencies": {
+    "moment": "^2.9.0"
   }
 }
