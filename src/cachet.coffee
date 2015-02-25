@@ -5,7 +5,8 @@
 #   None
 #
 # Commands:
-#   hubot cachet components list - Returns the list of the composants on the cachet status page
+#   hubot cachet components list - Returns the list of the components on the cachet status page
+#   hubot cachet incidents list - Returns the list of the incidents on the cachet status page
 #
 # Configuration:
 #   HUBOT_CACHET_API_URL
