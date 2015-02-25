@@ -67,7 +67,8 @@ module.exports = (robot) ->
           for incident in incidents.data
             incidentDay = moment.unix(incident.created_at) # format("dddd, MMMM Do YYYY, h:mm:ss a")
             if incident.component
+              console.log incident.component
               relatedComponent = getComponentById(msg, incident.component)
-              msg.send "#{incident.human_status} #{relatedComponent.name} at #{incidentDay.format('dddd, MMMM Do YYYY, h:mm:ss a')}, #{incident.message}"
+              msg.send "[#{incident.id}] #{incident.human_status} \"#{relatedComponent.name}\" at #{incidentDay.format('dddd, MMMM Do YYYY, h:mm:ss a')}, #{incident.message}"
             else
-              msg.send "#{incident.human_status} at #{incidentDay.format('dddd, MMMM Do YYYY, h:mm:ss a')}, #{incident.message}"
+              msg.send "[#{incident.id}] #{incident.human_status} at #{incidentDay.format('dddd, MMMM Do YYYY, h:mm:ss a')}, #{incident.message}"
