@@ -48,7 +48,7 @@ module.exports = (robot) ->
           console.log(err)
           return
         components = JSON.parse(body)
-        if component.data.length
+        if components.data.length
           for component in components.data
             msg.send "[#{component.id}][#{component.status}] #{component.name}"
         else
