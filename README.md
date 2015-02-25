@@ -15,3 +15,10 @@ Add the script to `external-scripts.json`
     "hubot-cachet"
 ]
 ```
+
+## Configuration
+
+You must define `HUBOT_CACHET_API_URL` and `HUBOT_CACHET_API_KEY` for this script to work.
+
+* `HUBOT_CACHET_API_URL`: The url of your status page with the scheme (without trailing slash)
+* `HUBOT_CACHET_API_KEY`: Your API key, you can found it at `/dashboard/user`
