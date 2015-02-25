@@ -33,5 +33,5 @@ module.exports = (robot) ->
           console.log(err)
           return
         components = JSON.parse(body)
-        for component in components
+        for component in components.data
           msg.send "[#{component.status}] #{component.name}"
