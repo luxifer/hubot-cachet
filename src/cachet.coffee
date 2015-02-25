@@ -17,19 +17,19 @@
 cachetUrl = process.env.HUBOT_CACHET_API_URL
 cachetApiKey = process.env.HUBOT_CACHET_API_KEY
 
-cachetGet = (robot, path) ->
-  robot.http("#{cachetUrl}#{path}")
+mkeRequest = (robot, path) ->
+  return robot.http("#{cachetUrl}#{path}")
     .header('Accept', 'application/json')
     .header('X-Cachet-Token', cachetApiKey)
-    .get() (err, res, body) ->
-      return JSON.parse(body)
 
 module.exports = (robot) ->
-
-  getComponents = (msg) ->
-    components = cachetGet(msg, '/api/components')
-    for component in components
-      msg.send "[#{component.status}] #{component.name}"
-
   robot.respond /cachet components list/i, (msg) ->
-    getComponents(msg)
+    mkeRequest(msg, '/api/components')
+      .get() (err, res, body) ->
+        if err
+          msg.send "Problem accessing the Cachet API"
+          console.log(err)
+          return
+        components = JSON.parse(body)
+        for component in components
+          msg.send "[#{component.status}] #{component.name}"
