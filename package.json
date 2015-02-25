@@ -1,0 +1,21 @@
+{
+  "name": "hubot-cachet",
+  "version": "0.0.1",
+  "description": "Hubot plugin to interact with cachet status page",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hubot",
+    "script",
+    "cachet"
+  ],
+  "author": "Florent Viel <florent.viel69@gmail.com>",
+  "license": "MIT",
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/luxifer/hubot-cachet.git"
+  }
+}
